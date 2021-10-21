@@ -1,0 +1,544 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* FONTES */
+:root {
+    --font_titulo_padrao: 'Original Surfer', cursive;
+    --font_titulo: 'Omnes', sans-serif;
+    --font_texto: 'Poppins', sans-serif;
+}
+
+/* TÍTULO PADRÃO */
+div.titulo_padrao {
+    display: flex;
+    justify-content: center;
+    margin: 5% auto;
+}
+h1.titulo_padrao {
+    font-family: var(--font_titulo_padrao);
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    padding: 2px 20px;
+    background-size: auto;
+    background-image: url(../img/fundo_video.png);
+    text-shadow: 0 0 2px #ea3337;
+    box-shadow: 0 4px 1px #b3383ff5;
+    border-radius: 4px;
+}
+
+/* BANNER PRINCIPAL */
+header.fundo_banner {
+    height: 120vh;
+    background-color: #ffc6c6;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    z-index: 0;
+}
+div.banner_imagem {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-image: url(../img/fundo_banner_imagem.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+div.banner_animacao {
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    background-image: url(../img/fundo_banner_animacao.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+    animation-name: banner;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes banner {
+    0% { opacity: 0; }
+    50% { opacity: 100%; }
+    55% { transform: rotate(2deg); opacity: 100%; }
+    60% { transform: rotate(-2deg); opacity: 100%; }
+    65% { transform: rotate(2deg); opacity: 100%; }
+    70% { transform: rotate(-2deg); opacity: 100%; }
+    75% { transform: rotate(2deg); opacity: 100%; }
+    80% { transform: rotate(-2deg); opacity: 100%;}
+    85% { transform: rotate(2deg); opacity: 100%; }
+    90% { transform: rotate(-2deg); opacity: 100%; }
+    100% { opacity: 0; }
+}
+
+h1.banner,
+h2.banner {
+    text-align: center;
+    font-family: var(--font_titulo);
+    font-weight: 800;
+    color: #000;
+    text-shadow: 1px 1px 0 #ffc6c6;
+}
+
+div.banner_logos {
+    height: auto;
+}
+div.banner_titulos {
+    height: auto;
+}
+
+figure.eletivas {
+    width: 100%;
+}
+img.eletivas {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+figure.semana {
+    width: 100%;
+}
+img.semana { 
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+/* SETA ANIMADA */
+figure.seta {
+    width: auto;
+    text-align: center;
+    margin: 4% 0;
+}
+img.seta {
+    height: auto;
+    width: 30px;
+    position: relative;
+    animation-name: seta;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes seta {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 15px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* FUNDO HABILIDADES E EIXOS */
+div.fundo_habilidades_eixos {
+    height: auto;
+    width: auto;
+    margin-top: -10%;
+    background-color: #9b2c1f;
+}
+div.imagem_habilidades_eixos {
+    height: auto;
+    width: 100%;
+    padding-top: 10%;
+    background-size: 100%;
+    background-image: url(../img/fundo_habilidades_eixos.png);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* SESSÃO HABILIDADES E COMPETÊNCIAS */
+section.habilidades {
+    width: 70%;
+    margin: 0 auto;
+}
+article.habilidades {
+    height: 100%;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+}
+figure.habilidades {
+    height: 150px;
+    width: 100%;
+}
+img.habilidades {
+    height: 100%;
+    width: auto;
+}
+h3.habilidades {
+    font-family: var(--font_titulo);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 33px;
+}
+
+/* BLOCO DE TEXTO */
+div.habilidades_texto {
+    height: 100%;
+    padding: 26px;
+    border-radius: 60px;
+    background-color: #FFFFFFE6;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+
+    opacity: 0;
+    transition: all 0.5s;
+}
+div.habilidades_texto:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+p.habilidades_texto {
+    font-size: 0.7em;
+    font-family: var(--font_texto);
+    line-height: 18px;
+}
+
+/* EFEITO FUNDO ESCURO */
+div.fundo_escuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    z-index: -3;
+    opacity: 0;
+    transition: opacity 1s;
+}
+div.habilidades_texto:hover + div.fundo_escuro {
+    opacity: 30%;
+    z-index: 1;
+}
+
+/* SESSÃO EIXOS TEMÁTICOS */
+section.eixos {
+    width: 70%;
+    margin: 0 auto;
+}
+article.eixos {
+    text-align: center;
+    padding: 50px 20px;
+}
+figure.eixos {
+    height: 120px;
+    width: auto;
+    position: relative;
+}
+img.eixos {
+    height: 100%;
+    width: auto;
+}
+h3.eixos {
+    font-family: var(--font_titulo);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 33px;
+}
+
+figure.eixos > img.icone {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+}
+
+/* SESSÃO TEXTO */
+div.fundo_texto {
+    background-color: #fff;
+}
+section.texto {
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+p.texto {
+    font-family: var(--font_texto);
+    font-size: 1em;
+    color: #384E4A;
+    text-indent: 1.5em;
+    line-height: 30px;
+}
+figure.texto_imagem-1 {
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    display: flex;
+}
+img.texto_imagem-1 {
+    width: 100%;
+    display: block;
+    align-self: center;
+    transform: rotate(10deg);
+    box-shadow: 2px 2px 8px #000;
+}
+figure.texto_imagem-2 {
+    width: 100%;
+    height: 100%;
+    padding: 4% 10%;
+    position: relative;
+}
+img.texto_imagem-2 {
+    width: 100%;
+}
+img.texto_animacao-2 {
+    width: 25%;
+    position: absolute;
+    left: 35%;
+    animation-name: balao;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes balao {
+    10% { transform: rotate(3deg) }
+    20% { transform: rotate(-3deg) }
+    30% { transform: rotate(3deg) }
+    40% { transform: rotate(-3deg) }
+    50% { transform: rotate(3deg) }
+    60% { transform: rotate(-3deg) }
+    70% { transform: rotate(3deg) }
+    80% { transform: rotate(-3deg) }
+    90% { transform: rotate(3deg) }
+    100% { transform: rotate(-3deg) }
+}
+
+/* SESSÃO VÍDEO */
+div.fundo_video {
+    background-size: auto;
+    background-image: url(../img/fundo_video.png);
+}
+section.video {
+    width: 60%;
+    margin: 0 auto;
+}
+div.video {
+    height: auto;
+    margin: 10% auto;
+    padding: 30px 20px;
+    border-radius: 25px;
+    background-color: #fff;
+    box-shadow: 0 15px 1px #b3383ff5;
+}
+video.video-1 {
+    height: auto;
+    width: 100%;
+}
+video.video-2 {
+    height: auto;
+    width: 100%;
+}
+h2.video {
+    font-family: var(--font_titulo);
+    font-weight: 700;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* SESSÃO MEMES */
+figure.memes {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+div.memes {
+    padding: 30px 0;
+}
+img.memes-1,
+img.memes-2,
+img.memes-3 {
+    height: auto;
+    width: 100%;
+}
+
+/* SESSÃO ATIVIDADE */
+div.fundo_atividade {
+    background-color: #fbdbdb;
+}
+section.atividade {
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+article.atividade {
+    width: 100%;
+    position: relative;
+    margin: 40px 0;
+}
+div.atividade {
+    padding: 0 10%;
+}
+h3.atividade {
+    font-weight: 800;
+    color: #fff;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    transform: rotate(-5deg);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ef4c52;
+}
+p.atividade {
+    text-indent: 1em;
+    line-height: 30px;
+}
+section.atividade img.icone {
+    height: 50px;
+    transform: rotate(5deg);
+}
+section.atividade div.borda {
+    height: 60px;
+    border-top: solid 2px #ef4c52;
+    border-right: solid 2px #ef4c52;
+    border-left: solid 2px #ef4c52;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    transform: skewY(-1.8deg);
+}
+div.borda::before {
+    content: '';
+    height: 10px;
+    position: relative;
+    float: left;
+    top: 20px;
+    left: -2px;
+    border-left: solid 2px #ef4c52;
+}
+div.borda::after {
+    content: '';
+    height: 60px;
+    position: relative;
+    float: right;
+    top: 50px;
+    right: -2px;
+    border-right: solid 2px #ef4c52;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 576px) {
+    /* TEXTOS */
+    h1.banner, h2.banner {
+        padding: 0 10px;
+    }
+    h1.titulo_padrao {
+        font-size: 0.9em;
+    }
+    h2.video {
+        font-size: 1.2em;
+        padding: 10px 0;
+    }
+
+    /* IMAGENS */
+    div.banner_animacao {
+        background-size: auto 100%;
+    }
+    img.eletivas, img.semana {
+        width: 80%;
+    }
+    div.imagem_habilidades_eixos {
+        padding-top: 15%;
+    }
+    figure.texto_imagem-1 {
+        padding: 15%;
+    }
+    img.seta {
+        height: auto;
+        width: 25px;
+    }
+
+    /* BLOCOS */
+    section.habilidades,
+    section.eixos,
+    section.texto,
+    section.video,
+    section.atividade {
+        width: 90%;
+    }
+    header.fundo_banner {
+        height: 100vh;
+    } 
+}
+
+/* TABLET */
+@media only screen and (min-width: 577px) and (max-width: 1200px) {
+    /* TEXTOS */
+    h2.video {
+        font-size: 1.2em;
+        padding: 10px 0;
+    }
+    p.habilidades_texto {
+        font-size: 0.8em;
+    }
+
+    /* IMAGENS */
+    img.eletivas, img.semana {
+        width: 50%;
+    }
+    div.banner_animacao {
+        background-size: auto 100%;
+    }
+    figure.texto_imagem-1 {
+        padding: 12% 20%;
+    }
+
+    /* BLOCOS */
+    section.habilidades,
+    section.eixos,
+    section.texto,
+    section.video,
+    section.atividade {
+        width: 90%;
+    }
+    header.fundo_banner {
+        height: 100vh;
+    }
+}
+
+/* HORIZONTAL */
+@media only screen and (orientation:landscape) and (max-width: 760px) {
+    /* TEXTOS */
+    h1.titulo_padrao {
+        font-size: 0.8em;
+    }
+    h1.banner {
+        font-size: 1em;
+    }
+    h2.banner {
+        font-size: 0.8em;
+    }
+
+    /* IMAGENS */
+    img.seta {
+        height: auto;
+        width: 12px;
+    }
+    img.eletivas, img.semana {
+        width: 30%;
+    }
+
+    /* BLOCOS */
+    div.titulo_padrao {
+        margin: 2% auto;
+    }
+}
