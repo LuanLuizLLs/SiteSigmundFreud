@@ -9,3 +9,6 @@ POC (Proof of Concept) de desenvolvimento realizado a partir de um modelo pré-d
 
 # Funcionalidade:
 - Site estático informativo com animações interativas.
+
+# Imagem:
+![screencapture-file-H-Meu-Drive-ITWS-Desenvolvimento-Editora-Arco-2-Entregas-TesteHTML-v2-index-html-2021-11-16-17_40_26](https://user-images.githubusercontent.com/37859294/142063141-faa783fa-dc7e-4cbb-839f-8ee2b4155a1f.png)
